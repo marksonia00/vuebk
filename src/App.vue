@@ -20,7 +20,7 @@ export default {
 
 <style>
 body{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     margin: 0;
 }
 #app {

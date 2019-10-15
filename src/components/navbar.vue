@@ -1,7 +1,8 @@
 <template>
     <div class="navbar">
-        <a href="#" @click="main">main</a>
-        <a href="#" @click="test">testpage</a>
+        <a href="#" @click="$router.push('/HelloWorld')">test</a>
+        <a href="#" @click="$router.push(`/listslide`)">todolist</a>
+        <a href="#" @click="$router.push(`/Taskinfo/${190004}`) ">sprintlist</a>
         <a href="#" @click="signout">Sign out</a>
     </div>
 </template>
@@ -17,13 +18,7 @@ export default {
             if (res.CODE === 200)
                 this.$router.push("/login")
         },
-        test() {
-            this.$router.push(`/Taskinfo/${190004}`)        
-        },
-        main() {
-            this.$router.push('/HelloWorld')       
-        },                      
-    ...mapActions(["logoutAction"])
+        ...mapActions(["logoutAction"])
     }
 }
 </script>

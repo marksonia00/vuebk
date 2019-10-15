@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import Taskinfo from '@/components/Taskinfo'
+import Listslide from '@/components/listslide'
 
 Vue.use(Router)
 
@@ -26,6 +27,12 @@ export default new Router({
       path: '/Taskinfo/:id',
       name: 'Taskinfo',
       component: Taskinfo
+    },
+    {
+      path: '/listslide',
+      name: 'Listslide',
+      component: Listslide
     }
+
   ]
 })
