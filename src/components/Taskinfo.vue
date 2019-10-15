@@ -41,25 +41,26 @@
                                 <b-card class="card px-2 shadow-sm" align="left" no-body 
                                         :style="{borderLeft: bordcolor(task.PRIORITY), opacity: focusOwnerBk(task.OWNER)}">
                                     <b-row class="small text-muted">
-                                        <b-col class="mb-1 pr-0">
+                                        <b-col cols="3" class="mb-1 pr-0 ">
                                             {{task.TASKID}}
                                         </b-col>
-                                        <b-col v-if="!isfocusSpt(list.sprint)" class="mb-1 px-0">
-                                            {{task.NAME.length > 10 ? task.NAME.substr(0,10)+'...' : task.NAME }}</b-col>
-                                        <b-col v-if="!isfocusSpt(list.sprint)" class="mb-1 pl-0 text-right">
+                                        <b-col v-if="!isfocusSpt(list.sprint)" cols="6" class="mb-1 px-0">
+                                            {{task.NAME.length > 15 ? task.NAME.substr(0,15)+'...' : task.NAME }}
+                                        </b-col>
+                                        <b-col v-if="!isfocusSpt(list.sprint)" cols="3" class="mb-1 pl-0 text-right">
                                             <b-badge class="ownerTag" 
                                                     @click.stop="focusOwner != task.OWNER? focusOwner = task.OWNER : focusOwner = ''">
                                                     {{task.OWNER}}
                                             </b-badge>
                                         </b-col>
-                                        <b-col v-if="isfocusSpt(list.sprint)" cols="4" class="mb-1 text-right">
+                                        <b-col v-if="isfocusSpt(list.sprint)" cols="9" class="mb-1 text-right">
                                             {{task.REMAININGPOINT}} / {{task.TOTALPOINT}}
                                         </b-col>
                                     </b-row>
                                     <b-row>
-                                        <b-col v-if="isfocusSpt(list.sprint)" class="mb-1">
+                                        <b-col v-if="isfocusSpt(list.sprint)" cols="8" class="mb-1">
                                             {{task.NAME.length > 15 ? task.NAME.substr(0,15)+'...' : task.NAME}}</b-col>
-                                        <b-col v-if="isfocusSpt(list.sprint)" cols="4" class="mb-1 text-right">
+                                        <b-col v-if="isfocusSpt(list.sprint)" class="mb-1 text-right">
                                             <b-badge class="ownerTag" 
                                                     @click.stop="focusOwner != task.OWNER? focusOwner = task.OWNER : focusOwner = ''">
                                                     {{task.OWNER}}
